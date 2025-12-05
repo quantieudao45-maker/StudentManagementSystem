@@ -1,0 +1,132 @@
+#include <stdio.h>
+void Main_menu(){
+    printf("========Student Manager System========");
+    printf("0. Exit\n");
+    printf("1. Manager Student\n");
+    printf("2. Manager Subject\n");
+    printf("3. Score management\n");
+    printf("============================================");
+}
+void Menu_StudentManagement(){
+    printf("========Student Manager========");
+    printf("0. Exit\n");
+    printf("1. Display Student List\n");
+    printf("2. Add Student Information\n");
+    printf("3. Update Student Information\n");
+    printf("4. Delete Student from the list\n");
+    printf("5. Sort students by first and last name\n");
+    printf("6. Display list of students by class\n");
+    printf("7. Search for students by student code\n");
+    printf("8. Search for students by name\n");
+    printf("=====================================");
+}
+void Display_Student_List_by_class(struct Student ArrStudent[], int Sum_student, char Class[30] ) 
+{
+    printf("Display_Student_List\n");
+    printf("Student ID\t Name \t Day of birth\t Address \t Phone number \t Class\n ");
+    
+    for(int i = 0; i < Sum ; i++) 
+    {
+    if(strcmp(Class,ArrStudent[i].Class) == 0)
+    {
+      printf("%d \t %s \t %d\\%d\\%d\t %s\t%s\t %s \n",ArrStudent[i].Student_ID,ArrStudent[i].Name,
+        ArrStudent[i].Day_of_birth.date,ArrStudent[i].Day_of_birth.month,ArrStudent[i].
+        Day_of_birth.year,ArrStudent[i].Address,ArrStudent[i].Phone_number,ArrStudent[i].Class);  
+
+    }
+    }
+}
+int main() {
+    int choose = 0;
+    struct Student ArrStudent[1000]; 
+    int Sum_student = 0;
+    do
+    {
+        Mainmenu();
+        printf("Please choose: ");
+        scanf("%d",&choose);
+        switch(choose)
+        {
+        case 0:
+        {
+            printf("You are completely exit!\n");
+            break;
+        }
+        case 1:
+        {
+            int choose_studentmanagement = 0;
+            do{
+               printf("Please choose: ");
+        scanf("%d",&choose_studentmanagement);
+        switch(choose_studentmanagement)
+        {
+            case 0:
+            {
+                printf("You are completely exit!\n"); 
+                break;
+            } 
+            case 1://Display Student List
+            {
+                Display_Student_List (ArrStudent, Sum_student); 
+                 break;
+            } 
+            case 2:
+            {
+                 break;
+            } 
+            case 3:
+            {
+                 break;
+            } 
+            case 4:
+            {
+                 break;
+            } 
+            case 5:
+            {
+                 break;
+            } 
+            case 6://Display list of students by class
+            {
+                char Class[30];
+                printf("Input the class to display the list of students:");
+                gets(Class);
+                Display_Student_List_by_class(ArrStudent,Sum_student,Class);
+                break;
+            }
+             case 7:
+            {
+                 break;
+            }
+             case 8:
+            {
+                 break;
+            } 
+            default:
+            {
+                printf("You entered the wrong information, please re-enter!\n ");
+                break;
+            }
+        }
+            } while ((choose_studentmanagement != 0));   
+            
+            break;
+        }
+        case 2://qlmh
+        {
+            break;
+        }
+        case 3://qld
+        {
+            break;
+        }
+        default:
+        {
+            printf("You entered the wrong information, please re-enter!\n ");
+            break;
+        }
+        }
+    } while (choose !=0);
+    
+}
+
