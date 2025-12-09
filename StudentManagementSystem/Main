@@ -1,0 +1,8 @@
+#include <stdio.h>
+#include <string.h>
+
+#include "Structure.h"
+int main() {
+    printf("Hello world!");
+    printf("chao thiet dinh nha");
+}
