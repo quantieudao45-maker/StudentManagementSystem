@@ -285,5 +285,6 @@ void mainMenu() {
 
 int main() {
     mainMenu();
+    printf("Hello");
     return 0;
 }
