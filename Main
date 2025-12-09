@@ -2,6 +2,13 @@
 #include <string.h>
 
 #include "Structure.h"
+<<<<<<< HEAD
 int main(){
 
 }
+=======
+int main() {
+    printf("Hello world!");
+    printf("chao thiet dinh nha");
+}
+>>>>>>> 85670e2b641f2f9a494156d27f0d83dacaff9e4e
