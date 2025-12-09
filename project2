@@ -20,11 +20,22 @@ void Menu_StudentManagement(){
     printf("8. Search for students by name\n");
     printf("=====================================");
 }
-void Display_Student_List_by_class(struct Student ArrStudent[], int Sum_student, char Class[30] ) 
+void Display_Student_List(struct Student ArrStudent[], int Sum_student ) 
 {
     printf("Display_Student_List\n");
     printf("Student ID\t Name \t Day of birth\t Address \t Phone number \t Class\n ");
     
+    for(int i = 0; i < Sum ; i++) 
+    {
+      printf("%d \t %s \t %d\\%d\\%d\t %s\t%s\t %s \n",ArrStudent[i].StudentID,ArrStudent[i].Name,
+        ArrStudent[i].Day_of_birth.date,ArrStudent[i].Day_of_birth.month,ArrStudent[i].
+        Day_of_birth.year,ArrStudent[i].Address,ArrStudent[i].Phone_number,ArrStudent[i].Class);  
+    }
+    }
+void Display_Student_List_by_class(struct Student ArrStudent[], int Sum_student, char Class[30] ) 
+{
+    printf("Display_Student_List\n");
+    printf("Student ID\t Name \t Day of birth\t Address \t Phone number \t Class\n ");
     for(int i = 0; i < Sum ; i++) 
     {
     if(strcmp(Class,ArrStudent[i].Class) == 0)
@@ -36,6 +47,74 @@ void Display_Student_List_by_class(struct Student ArrStudent[], int Sum_student,
     }
     }
 }
+void Add_Student_Information(struct Student ArrStudent[], int Sum_student)
+{
+    printf("Add student information for student number %d\n", Sum_student + 1);
+    printf("Add student ID :"); 
+    scanf("%d", Arrstudent[Sum_student].StudentID);
+    printf("Add student name :");
+    fflush(stdin); 
+    gets(ArrStudent[Sum_student].Studentname);
+    printf("Add day :"); 
+    scanf("%d", Arrstudent[Sum_student].Day_of_birth.date);
+    printf("Add month :"); 
+    scanf("%d", Arrstudent[Sum_student].Day_of_birth.month);
+    printf("Add year :"); 
+    scanf("%d", Arrstudent[Sum_student].Day_of_birth.year);
+    printf("Add student address :");
+    fflush(stdin);
+    gets(ArrStudent[Sum_student].Address);
+    printf("Add student number :");
+    fflush(stdin);
+    gets(ArrStudent[Sum_student].number);
+    printf("Add student class :");
+    fflush(stdin);
+    gets(ArrStudent[Sum_student].class);
+    Sum_student++;
+}
+void Update_Student(struct Student ArrStudent[], int Sum_student, int StudentID)
+{
+    for(int i=0;i < Sum_student;i++)
+    {
+        if(ArrStudent[i].StudentID==StudentID)
+        {
+            printf("Add student information for student number %d\n", Sum_student + 1);
+            printf("Add student name :");
+            fflush(stdin); 
+            gets(ArrStudent[Sum_student].Studentname);
+            printf("Add day :"); 
+            scanf("%d", Arrstudent[Sum_student].Day_of_birth.date);
+            printf("Add month :"); 
+            scanf("%d", Arrstudent[Sum_student].Day_of_birth.month);
+            printf("Add year :"); 
+            scanf("%d", Arrstudent[Sum_student].Day_of_birth.year);
+            printf("Add student address :");
+            fflush(stdin);
+            gets(ArrStudent[Sum_student].Address);
+            printf("Add student number :");
+            fflush(stdin);
+            gets(ArrStudent[Sum_student].number);
+            printf("Add student class :");
+            fflush(stdin);
+            gets(ArrStudent[Sum_student].class);
+            break;
+        }
+    }
+}
+void Delete_Student(struct Student ArrStudent[], int Sum_student, int StudentID)
+{
+    for(int i=0;i < Sum_student;i++){
+        if(ArrStudent[i].StudentID == StudentID){
+            for(int j = i; j < Sum_student; j++){
+                ArrStudent[j]=ArrStudent[j + 1];
+            }
+        }
+    }
+
+}
+
+
+
 int main() {
     int choose = 0;
     struct Student ArrStudent[1000]; 
@@ -70,16 +149,24 @@ int main() {
                 Display_Student_List (ArrStudent, Sum_student); 
                  break;
             } 
-            case 2:
+            case 2://Add Student 
             {
+                Add_Student_Information(ArrStudent,Sum_student);                   
                  break;
             } 
-            case 3:
+            case 3://Updent student ID
             {
+                int StudentID;
+                printf("Add student ID update :");
+                scanf("%d",&StudentID);
+                Updent_student_ID(ArrStudent, Sum_student, StudentID);
                  break;
             } 
-            case 4:
+            case 4://Delete Student from the list
             {
+                int StudentID;
+                printf("Add student ID need to delete :");
+                scanf("%d",&StudentID);
                  break;
             } 
             case 5:

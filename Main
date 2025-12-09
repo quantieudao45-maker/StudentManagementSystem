@@ -2,6 +2,6 @@
 #include <string.h>
 
 #include "Structure.h"
-int main() {
-    printf("Hello world!");
+int main(){
+
 }
